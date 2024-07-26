@@ -1,0 +1,1175 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Cormorant+Garamond:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+    background-color: #f8f5f1;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(248, 245, 241, 0.95);
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: #2c2c2c;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    padding: 0 1rem;
+}
+
+.nav-link {
+    color: #2c2c2c;
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    background-color: #2c2c2c;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 2px;
+    background-color: #2c2c2c;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-carousel,
+.swiper-wrapper {
+    height: 100vh;
+}
+
+.hero-slide {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh + 100px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    will-change: transform;
+}
+
+.carousel-nav {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 20px;
+}
+
+.carousel-nav-item {
+    width: 50px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-nav-item.active {
+    background-color: #ffffff;
+}
+
+.featured-collections,
+.design-journey,
+.client-testimonials {
+    padding: 6rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-title {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #2c2c2c;
+}
+
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.collection-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.collection-item:hover {
+    transform: translateY(-10px);
+}
+
+.collection-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.collection-item:hover .collection-image {
+    transform: scale(1.05);
+}
+
+.collection-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.collection-item:hover .collection-info {
+    transform: translateY(0);
+}
+
+.collection-title {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #2c2c2c;
+}
+
+.collection-description {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.collection-link {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: #2c2c2c;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.collection-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #2c2c2c;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.collection-link:hover::after {
+    transform: scaleX(1);
+}
+
+.design-journey {
+    background-color: #f0ebe1;
+    overflow: hidden;
+}
+
+.journey-timeline {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+}
+
+.journey-timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #2c2c2c;
+    transform: translateY(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 120px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #2c2c2c;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover::before,
+.timeline-item.active::before {
+    width: 30px;
+    height: 30px;
+    background-color: #f8f5f1;
+    border: 2px solid #2c2c2c;
+}
+
+.timeline-content {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content,
+.timeline-item.active .timeline-content {
+    opacity: 1;
+    visibility: visible;
+    top: calc(100% + 20px);
+}
+
+.timeline-content h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.journey-showcase {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.showcase-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.showcase-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.journey-showcase:hover .showcase-image {
+    transform: scale(1.05);
+}
+
+.journey-showcase:hover .showcase-overlay {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        height: 100vh;
+        background: rgba(248, 245, 241, 0.98);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        transition: right 0.5s ease;
+    }
+
+    .nav-links li {
+        opacity: 0;
+        padding: 1.5rem;
+    }
+
+    .burger {
+        display: block;
+        z-index: 2;
+    }
+
+    .nav-active {
+        right: 0;
+    }
+
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .toggle .line2 {
+        opacity: 0;
+    }
+
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .collections-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .journey-timeline {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 30px;
+    }
+
+    .journey-timeline::before {
+        left: 10px;
+        right: auto;
+        height: 100%;
+        width: 2px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        margin-bottom: 2rem;
+        text-align: left;
+    }
+
+    .timeline-item::before {
+        left: -30px;
+    }
+
+    .timeline-content {
+        left: 0;
+        transform: none;
+    }
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.design-journey {
+    background-color: #f0ebe1;
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+.journey-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.journey-timeline {
+    position: relative;
+    width: 50%;
+    padding-right: 2rem;
+}
+
+.timeline-progress {
+    position: absolute;
+    top: 0;
+    left: 14px;
+    width: 2px;
+    height: 0;
+    background-color: #2c2c2c;
+    transition: height 0.5s ease;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background-color: #f8f5f1;
+    border: 2px solid #2c2c2c;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.timeline-icon i {
+    color: #2c2c2c;
+    font-size: 14px;
+}
+
+.timeline-item:hover .timeline-icon,
+.timeline-item.active .timeline-icon {
+    background-color: #2c2c2c;
+}
+
+.timeline-item:hover .timeline-icon i,
+.timeline-item.active .timeline-icon i {
+    color: #f8f5f1;
+}
+
+.timeline-content {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content,
+.timeline-item.active .timeline-content {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-content h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.journey-showcase {
+    width: 50%;
+    perspective: 1000px;
+}
+
+.showcase-card {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.showcase-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-front {
+    background-color: #f8f5f1;
+}
+
+.card-back {
+    background-color: #2c2c2c;
+    color: #f8f5f1;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+.showcase-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-back h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.card-back p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+    .journey-wrapper {
+        flex-direction: column;
+    }
+
+    .journey-timeline,
+    .journey-showcase {
+        width: 100%;
+    }
+
+    .journey-timeline {
+        margin-bottom: 2rem;
+        padding-right: 0;
+    }
+}
+
+.design-journey {
+    background-color: #f0ebe1;
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+.journey-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.journey-item {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.journey-item:hover {
+    transform: translateY(-10px);
+}
+
+.journey-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.journey-item:hover .journey-image {
+    transform: scale(1.1);
+}
+
+.journey-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.journey-item:hover .journey-overlay {
+    transform: translateY(0);
+}
+
+.journey-overlay h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.journey-details {
+    margin-top: 2.5rem;
+    background-color: #fff;
+    padding: 1.8rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.journey-step-title {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2c2c2c;
+}
+
+.journey-step-description {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+@media screen and (max-width: 768px) {
+    .journey-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .journey-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+.client-testimonials {
+    background-color: #f8f5f1;
+}
+
+.testimonial-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-content {
+    max-width: 800px;
+    position: relative;
+}
+
+.testimonial-quote {
+    position: relative;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.testimonial-quote::before,
+.testimonial-quote::after {
+    content: '"';
+    font-size: 3rem;
+    color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+}
+
+.testimonial-quote::before {
+    top: -10px;
+    left: -10px;
+}
+
+.testimonial-quote::after {
+    bottom: -10px;
+    right: -10px;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.testimonial-author img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.testimonial-author h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.5rem;
+    color: #2c2c2c;
+}
+
+.testimonial-author span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: #777;
+}
+
+.testimonials-carousel {
+    margin-top: 2rem;
+}
+
+.testimonials-nav {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.testimonials-nav-item {
+    width: 30px;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.testimonials-nav-item.active {
+    background-color: #2c2c2c;
+}
+
+.virtual-try-on {
+    background-color: #f0ebe1;
+    padding: 6rem 0;
+}
+
+.try-on-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 3rem;
+}
+
+.model-container {
+    position: relative;
+    width: 50%;
+    max-width: 400px;
+    margin-right: 2rem;
+}
+
+.model-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.garment-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.controls-container {
+    width: 45%;
+}
+
+.design-selector {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.design-option {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.design-option:hover {
+    transform: translateY(-5px);
+}
+
+.design-option img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.design-option span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.color-selector h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.color-options {
+    display: flex;
+    gap: 1rem;
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+    .try-on-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .model-container, .controls-container {
+        width: 100%;
+        max-width: 400px;
+        margin-right: 0;
+    }
+
+    .controls-container {
+        margin-top: 2rem;
+    }
+}
+
+.video-showcase {
+    background-color: #f0ebe1;
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+.video-container {
+    display: flex;
+    gap: 2rem;
+    height: 80vh;
+    margin-top: 3rem;
+}
+
+.main-video-wrapper {
+    flex: 2;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.main-video-wrapper:hover .video-overlay {
+    opacity: 1;
+}
+
+.video-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.video-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.video-item:hover {
+    transform: scale(1.05);
+}
+
+.video-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-item h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-item:hover h3 {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .video-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .main-video-wrapper {
+        height: 50vh;
+    }
+
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+}
+
+.main-video-wrapper {
+    flex: 2;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%;
+}
+
+.main-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.main-video-wrapper:hover .video-overlay {
+    opacity: 1;
+}
+
+.video-showcase {
+    padding: 6rem 0;
+    background-color: #f0ebe1;
+}
+
+.video-container {
+    display: flex;
+    gap: 2rem;
+    height: 80vh;
+    margin-top: 3rem;
+}
+
+.main-video-wrapper {
+    flex: 2;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-height: 300px;
+}
+
+.main-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.main-video-wrapper:hover .video-overlay {
+    opacity: 1;
+}
+
+.video-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.video-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.video-item:hover {
+    transform: scale(1.05);
+}
+
+.video-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-item h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-item:hover h3 {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .video-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .main-video-wrapper {
+        flex: none;
+        height: 50vh;
+        min-height: 250px;
+    }
+
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .video-item {
+        height: 150px;
+    }
+}
+
